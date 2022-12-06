@@ -2,7 +2,7 @@ import cv2
 import controller as cnt
 from cvzone.HandTrackingModule import HandDetector
 
-detector = HandDetector(detectionCon=0.6, maxHands=1)
+detector = HandDetector(detectionCon=0.8, maxHands=1)
 
 video = cv2.VideoCapture(0)
 
@@ -11,7 +11,7 @@ while True:
     hands,img=detector.findHands(frame)
 
     if hands:
-        
+
         lmList = hands[0]
         fingerUp = detector.fingersUp(lmList)
 
